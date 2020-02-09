@@ -56,13 +56,9 @@
 		5CFE95BC23F00FCF00D398FF /* Countries */ = {
 			isa = PBXGroup;
 			children = (
-				5CFE95BD23F00FCF00D398FF /* AppDelegate.swift */,
-				5CFE95BF23F00FCF00D398FF /* SceneDelegate.swift */,
-				5CFE95C123F00FCF00D398FF /* ContentView.swift */,
-				5CFE95C323F00FD200D398FF /* Assets.xcassets */,
-				5CFE95C823F00FD200D398FF /* LaunchScreen.storyboard */,
-				5CFE95CB23F00FD200D398FF /* Info.plist */,
-				5CFE95C523F00FD200D398FF /* Preview Content */,
+				5CFE95D123F0107100D398FF /* App */,
+				5CFE95D223F0108100D398FF /* Presentation */,
+				5CFE95D323F010A000D398FF /* Supporting Files */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -73,6 +69,34 @@
 				5CFE95C623F00FD200D398FF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5CFE95D123F0107100D398FF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5CFE95BD23F00FCF00D398FF /* AppDelegate.swift */,
+				5CFE95BF23F00FCF00D398FF /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5CFE95D223F0108100D398FF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5CFE95C123F00FCF00D398FF /* ContentView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5CFE95D323F010A000D398FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CFE95C323F00FD200D398FF /* Assets.xcassets */,
+				5CFE95C823F00FD200D398FF /* LaunchScreen.storyboard */,
+				5CFE95CB23F00FD200D398FF /* Info.plist */,
+				5CFE95C523F00FD200D398FF /* Preview Content */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,10 +309,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Countries/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Countries/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = ZGNJ8Z375R;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Countries/Info.plist;
+				INFOPLIST_FILE = "Countries/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,10 +329,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Countries/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Countries/Supporting Files/Preview Content\"";
 				DEVELOPMENT_TEAM = ZGNJ8Z375R;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Countries/Info.plist;
+				INFOPLIST_FILE = "Countries/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
