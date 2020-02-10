@@ -30,12 +30,8 @@ class CountryListViewModel: ObservableObject {
     
     init() { }
     
-    func fetchAllCountries() {
-        URLSession.shared.dataTaskPublisher(for: URLRequest(url: URL(string: "https://restcountries.eu/rest/v2/all")!))
-            .map { (output) in
-                return output.data
-            }
-            .decode(type: [Country].self, decoder: JSONDecoder())
+    func fetchAll() {
+        RCNetworker().fetchAll()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { (completion) in
                 switch completion {

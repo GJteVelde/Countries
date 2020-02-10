@@ -22,7 +22,7 @@ struct CountryListView: View {
         
             .navigationBarTitle("Countries")
         }.onAppear {
-            self.viewModel.fetchAllCountries()
+            self.viewModel.fetchAll()
         }
     }
 }
@@ -51,7 +51,6 @@ extension CountryListView {
             }
         }
     }
-    
 }
 
 struct CountryListView_Previews: PreviewProvider {

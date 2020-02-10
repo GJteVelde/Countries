@@ -17,6 +17,10 @@
 		5CFE95D823F0125C00D398FF /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95D723F0125C00D398FF /* CountryListViewModel.swift */; };
 		5CFE95DD23F0134B00D398FF /* CountryListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95DC23F0134B00D398FF /* CountryListRowView.swift */; };
 		5CFE95DF23F0138C00D398FF /* CountryListRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95DE23F0138C00D398FF /* CountryListRowViewModel.swift */; };
+		5CFE95E923F1FF1700D398FF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95E823F1FF1700D398FF /* API.swift */; };
+		5CFE95EC23F1FFF400D398FF /* RCApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95EB23F1FFF400D398FF /* RCApi.swift */; };
+		5CFE95EE23F2016E00D398FF /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95ED23F2016E00D398FF /* Networking.swift */; };
+		5CFE95F023F202AA00D398FF /* RCNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95EF23F202AA00D398FF /* RCNetworker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		5CFE95D723F0125C00D398FF /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
 		5CFE95DC23F0134B00D398FF /* CountryListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListRowView.swift; sourceTree = "<group>"; };
 		5CFE95DE23F0138C00D398FF /* CountryListRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListRowViewModel.swift; sourceTree = "<group>"; };
+		5CFE95E823F1FF1700D398FF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5CFE95EB23F1FFF400D398FF /* RCApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCApi.swift; sourceTree = "<group>"; };
+		5CFE95ED23F2016E00D398FF /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		5CFE95EF23F202AA00D398FF /* RCNetworker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNetworker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +119,9 @@
 		5CFE95D423F0119600D398FF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5CFE95E723F1FF0400D398FF /* Protocol */,
 				5CFE95E123F0818F00D398FF /* Model */,
+				5CFE95EA23F1FFE500D398FF /* RestCountries */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -149,6 +159,24 @@
 				5CFE95D523F011A300D398FF /* Country.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5CFE95E723F1FF0400D398FF /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5CFE95E823F1FF1700D398FF /* API.swift */,
+				5CFE95ED23F2016E00D398FF /* Networking.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		5CFE95EA23F1FFE500D398FF /* RestCountries */ = {
+			isa = PBXGroup;
+			children = (
+				5CFE95EB23F1FFF400D398FF /* RCApi.swift */,
+				5CFE95EF23F202AA00D398FF /* RCNetworker.swift */,
+			);
+			path = RestCountries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,11 +251,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CFE95D623F011A300D398FF /* Country.swift in Sources */,
+				5CFE95EE23F2016E00D398FF /* Networking.swift in Sources */,
 				5CFE95D823F0125C00D398FF /* CountryListViewModel.swift in Sources */,
 				5CFE95BE23F00FCF00D398FF /* AppDelegate.swift in Sources */,
+				5CFE95F023F202AA00D398FF /* RCNetworker.swift in Sources */,
 				5CFE95C023F00FCF00D398FF /* SceneDelegate.swift in Sources */,
+				5CFE95EC23F1FFF400D398FF /* RCApi.swift in Sources */,
 				5CFE95DF23F0138C00D398FF /* CountryListRowViewModel.swift in Sources */,
 				5CFE95DD23F0134B00D398FF /* CountryListRowView.swift in Sources */,
+				5CFE95E923F1FF1700D398FF /* API.swift in Sources */,
 				5CFE95C223F00FCF00D398FF /* CountryListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
