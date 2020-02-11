@@ -9,7 +9,11 @@
 import Foundation
 import Combine
 
-protocol Networking { }
+protocol Networking {
+    
+    var session: URLSession { get }
+    
+}
 
 extension Networking {
     
@@ -18,7 +22,7 @@ extension Networking {
             fatalError()
         }
         
-        return URLSession.shared.dataTaskPublisher(for: urlRequest)
+        return session.dataTaskPublisher(for: urlRequest)
             .tryMap { (output) in
                 print(output.data)
                 return output.data

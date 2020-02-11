@@ -11,6 +11,12 @@ import Combine
 
 class RCNetworker: Networking {
  
+    var session: URLSession
+    
+    init(session: URLSession = URLSession.shared) {
+        self.session = session
+    }
+    
     func fetchAll() -> AnyPublisher<[Country], Error> {
         let api = RCApi.fetchAll
         return self.fetch(api: api)
