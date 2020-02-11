@@ -13,6 +13,7 @@ import Foundation
 enum RCApi {
     
     case fetchAll
+    case fetch(id: String)
     
 }
 
@@ -36,6 +37,7 @@ extension RCApi: API {
         
         switch self {
         case .fetchAll:             base += "all"
+        case .fetch(id: let id):    base += "alpha/\(id)"
         }
         
         return base

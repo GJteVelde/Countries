@@ -21,6 +21,9 @@
 		5CFE95EC23F1FFF400D398FF /* RCApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95EB23F1FFF400D398FF /* RCApi.swift */; };
 		5CFE95EE23F2016E00D398FF /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95ED23F2016E00D398FF /* Networking.swift */; };
 		5CFE95F023F202AA00D398FF /* RCNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95EF23F202AA00D398FF /* RCNetworker.swift */; };
+		5CFE95F423F333C700D398FF /* RCRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95F323F333C700D398FF /* RCRepository.swift */; };
+		5CFE95F623F34CC200D398FF /* RCWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95F523F34CC200D398FF /* RCWebRepository.swift */; };
+		5CFE95F823F34E2300D398FF /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95F723F34E2300D398FF /* Networker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		5CFE95EB23F1FFF400D398FF /* RCApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCApi.swift; sourceTree = "<group>"; };
 		5CFE95ED23F2016E00D398FF /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		5CFE95EF23F202AA00D398FF /* RCNetworker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNetworker.swift; sourceTree = "<group>"; };
+		5CFE95F323F333C700D398FF /* RCRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCRepository.swift; sourceTree = "<group>"; };
+		5CFE95F523F34CC200D398FF /* RCWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCWebRepository.swift; sourceTree = "<group>"; };
+		5CFE95F723F34E2300D398FF /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				5CFE95D523F011A300D398FF /* Country.swift */,
+				5CFE95F723F34E2300D398FF /* Networker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +182,8 @@
 			children = (
 				5CFE95EB23F1FFF400D398FF /* RCApi.swift */,
 				5CFE95EF23F202AA00D398FF /* RCNetworker.swift */,
+				5CFE95F323F333C700D398FF /* RCRepository.swift */,
+				5CFE95F523F34CC200D398FF /* RCWebRepository.swift */,
 			);
 			path = RestCountries;
 			sourceTree = "<group>";
@@ -251,11 +260,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CFE95D623F011A300D398FF /* Country.swift in Sources */,
+				5CFE95F823F34E2300D398FF /* Networker.swift in Sources */,
 				5CFE95EE23F2016E00D398FF /* Networking.swift in Sources */,
 				5CFE95D823F0125C00D398FF /* CountryListViewModel.swift in Sources */,
+				5CFE95F423F333C700D398FF /* RCRepository.swift in Sources */,
 				5CFE95BE23F00FCF00D398FF /* AppDelegate.swift in Sources */,
 				5CFE95F023F202AA00D398FF /* RCNetworker.swift in Sources */,
 				5CFE95C023F00FCF00D398FF /* SceneDelegate.swift in Sources */,
+				5CFE95F623F34CC200D398FF /* RCWebRepository.swift in Sources */,
 				5CFE95EC23F1FFF400D398FF /* RCApi.swift in Sources */,
 				5CFE95DF23F0138C00D398FF /* CountryListRowViewModel.swift in Sources */,
 				5CFE95DD23F0134B00D398FF /* CountryListRowView.swift in Sources */,

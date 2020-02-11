@@ -28,10 +28,14 @@ class CountryListViewModel: ObservableObject {
     
     private var cancellable = Set<AnyCancellable>()
     
-    init() { }
+    private let repository: RCRepository
+    
+    init(repository: RCRepository = RCWebRepository()) {
+        self.repository = repository
+    }
     
     func fetchAll() {
-        RCNetworker().fetchAll()
+        repository.getAll()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { (completion) in
                 switch completion {

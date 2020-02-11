@@ -16,4 +16,8 @@ class RCNetworker: Networking {
         return self.fetch(api: api)
     }
     
+    func fetch(id: String) -> AnyPublisher<Country, Error> {
+        let api = RCApi.fetch(id: id)
+        return self.fetch(api: api)
+    }
 }
