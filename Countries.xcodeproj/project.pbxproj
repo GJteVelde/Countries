@@ -58,6 +58,7 @@
 		5CFE960B23F49B7300D398FF /* CountriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFE960D23F49B7300D398FF /* CountriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTests.swift; sourceTree = "<group>"; };
 		5CFE960F23F49B7300D398FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CFE961523F49BCE00D398FF /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +212,7 @@
 		5CFE960C23F49B7300D398FF /* CountriesTests */ = {
 			isa = PBXGroup;
 			children = (
+				5CFE961523F49BCE00D398FF /* TestPlan.xctestplan */,
 				5CFE960D23F49B7300D398FF /* CountriesTests.swift */,
 				5CFE960F23F49B7300D398FF /* Info.plist */,
 			);
