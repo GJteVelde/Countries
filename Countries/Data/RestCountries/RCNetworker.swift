@@ -10,7 +10,9 @@ import Foundation
 import Combine
 
 class RCNetworker: Networking {
- 
+    
+    static let shared: RCNetworker = RCNetworker()
+    
     var session: URLSession
     
     init(session: URLSession = URLSession.shared) {

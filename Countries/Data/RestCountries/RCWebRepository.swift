@@ -15,7 +15,7 @@ class RCWebRepository: RCRepository {
     
     private let networker: Networking
     
-    init(networker: Networking = Networker.shared) {
+    init(networker: Networking = RCNetworker.shared) {
         self.networker = networker
     }
     
