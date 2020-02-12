@@ -23,7 +23,18 @@
 		5CFE95F023F202AA00D398FF /* RCNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95EF23F202AA00D398FF /* RCNetworker.swift */; };
 		5CFE95F423F333C700D398FF /* RCRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95F323F333C700D398FF /* RCRepository.swift */; };
 		5CFE95F623F34CC200D398FF /* RCWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95F523F34CC200D398FF /* RCWebRepository.swift */; };
+		5CFE960E23F49B7300D398FF /* CountriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE960D23F49B7300D398FF /* CountriesTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5CFE961023F49B7300D398FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFE95B223F00FCF00D398FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CFE95B923F00FCF00D398FF;
+			remoteInfo = Countries;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5CFE95BA23F00FCF00D398FF /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,10 +55,20 @@
 		5CFE95EF23F202AA00D398FF /* RCNetworker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNetworker.swift; sourceTree = "<group>"; };
 		5CFE95F323F333C700D398FF /* RCRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCRepository.swift; sourceTree = "<group>"; };
 		5CFE95F523F34CC200D398FF /* RCWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCWebRepository.swift; sourceTree = "<group>"; };
+		5CFE960B23F49B7300D398FF /* CountriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CFE960D23F49B7300D398FF /* CountriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTests.swift; sourceTree = "<group>"; };
+		5CFE960F23F49B7300D398FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5CFE95B723F00FCF00D398FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CFE960823F49B7300D398FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -61,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				5CFE95BC23F00FCF00D398FF /* Countries */,
+				5CFE960C23F49B7300D398FF /* CountriesTests */,
 				5CFE95BB23F00FCF00D398FF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				5CFE95BA23F00FCF00D398FF /* Countries.app */,
+				5CFE960B23F49B7300D398FF /* CountriesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,6 +208,15 @@
 			path = RestCountries;
 			sourceTree = "<group>";
 		};
+		5CFE960C23F49B7300D398FF /* CountriesTests */ = {
+			isa = PBXGroup;
+			children = (
+				5CFE960D23F49B7300D398FF /* CountriesTests.swift */,
+				5CFE960F23F49B7300D398FF /* Info.plist */,
+			);
+			path = CountriesTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,6 +237,24 @@
 			productReference = 5CFE95BA23F00FCF00D398FF /* Countries.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5CFE960A23F49B7300D398FF /* CountriesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CFE961223F49B7300D398FF /* Build configuration list for PBXNativeTarget "CountriesTests" */;
+			buildPhases = (
+				5CFE960723F49B7300D398FF /* Sources */,
+				5CFE960823F49B7300D398FF /* Frameworks */,
+				5CFE960923F49B7300D398FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5CFE961123F49B7300D398FF /* PBXTargetDependency */,
+			);
+			name = CountriesTests;
+			productName = CountriesTests;
+			productReference = 5CFE960B23F49B7300D398FF /* CountriesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -217,6 +267,10 @@
 				TargetAttributes = {
 					5CFE95B923F00FCF00D398FF = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					5CFE960A23F49B7300D398FF = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 5CFE95B923F00FCF00D398FF;
 					};
 				};
 			};
@@ -234,6 +288,7 @@
 			projectRoot = "";
 			targets = (
 				5CFE95B923F00FCF00D398FF /* Countries */,
+				5CFE960A23F49B7300D398FF /* CountriesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -246,6 +301,13 @@
 				5CFE95CA23F00FD200D398FF /* LaunchScreen.storyboard in Resources */,
 				5CFE95C723F00FD200D398FF /* Preview Assets.xcassets in Resources */,
 				5CFE95C423F00FD200D398FF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CFE960923F49B7300D398FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +334,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5CFE960723F49B7300D398FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CFE960E23F49B7300D398FF /* CountriesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5CFE961123F49B7300D398FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CFE95B923F00FCF00D398FF /* Countries */;
+			targetProxy = 5CFE961023F49B7300D398FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5CFE95C823F00FD200D398FF /* LaunchScreen.storyboard */ = {
@@ -440,6 +518,46 @@
 			};
 			name = Release;
 		};
+		5CFE961323F49B7300D398FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZGNJ8Z375R;
+				INFOPLIST_FILE = CountriesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gerjantevelde.CountriesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Countries.app/Countries";
+			};
+			name = Debug;
+		};
+		5CFE961423F49B7300D398FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZGNJ8Z375R;
+				INFOPLIST_FILE = CountriesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gerjantevelde.CountriesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Countries.app/Countries";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -457,6 +575,15 @@
 			buildConfigurations = (
 				5CFE95CF23F00FD200D398FF /* Debug */,
 				5CFE95D023F00FD200D398FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CFE961223F49B7300D398FF /* Build configuration list for PBXNativeTarget "CountriesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CFE961323F49B7300D398FF /* Debug */,
+				5CFE961423F49B7300D398FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
