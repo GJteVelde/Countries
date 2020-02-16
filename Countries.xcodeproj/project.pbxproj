@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1B864A23F98622003E7424 /* RCNetworkingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B864923F98622003E7424 /* RCNetworkingHelper.swift */; };
+		5C1B864C23F9D298003E7424 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B864B23F9D298003E7424 /* APITests.swift */; };
+		5C69E48223F9D70100363E1A /* oneCountry.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C69E48123F9D70000363E1A /* oneCountry.json */; };
+		5C69E48423F9D83300363E1A /* CountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69E48323F9D83300363E1A /* CountryTests.swift */; };
 		5CFE95BE23F00FCF00D398FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95BD23F00FCF00D398FF /* AppDelegate.swift */; };
 		5CFE95C023F00FCF00D398FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95BF23F00FCF00D398FF /* SceneDelegate.swift */; };
 		5CFE95C223F00FCF00D398FF /* CountryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95C123F00FCF00D398FF /* CountryListView.swift */; };
@@ -23,7 +27,9 @@
 		5CFE95F023F202AA00D398FF /* RCNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95EF23F202AA00D398FF /* RCNetworker.swift */; };
 		5CFE95F423F333C700D398FF /* RCRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95F323F333C700D398FF /* RCRepository.swift */; };
 		5CFE95F623F34CC200D398FF /* RCWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95F523F34CC200D398FF /* RCWebRepository.swift */; };
-		5CFE960E23F49B7300D398FF /* CountriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE960D23F49B7300D398FF /* CountriesTests.swift */; };
+		5CFE961723F49D3300D398FF /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE961623F49D3300D398FF /* NetworkingTests.swift */; };
+		5CFE961923F49D6100D398FF /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE961823F49D6100D398FF /* URLProtocolMock.swift */; };
+		5CFE961D23F4A43400D398FF /* allCountries.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CFE961C23F4A43400D398FF /* allCountries.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C1B864923F98622003E7424 /* RCNetworkingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCNetworkingHelper.swift; sourceTree = "<group>"; };
+		5C1B864B23F9D298003E7424 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		5C69E48123F9D70000363E1A /* oneCountry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = oneCountry.json; sourceTree = "<group>"; };
+		5C69E48323F9D83300363E1A /* CountryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTests.swift; sourceTree = "<group>"; };
 		5CFE95BA23F00FCF00D398FF /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFE95BD23F00FCF00D398FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CFE95BF23F00FCF00D398FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,9 +66,11 @@
 		5CFE95F323F333C700D398FF /* RCRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCRepository.swift; sourceTree = "<group>"; };
 		5CFE95F523F34CC200D398FF /* RCWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCWebRepository.swift; sourceTree = "<group>"; };
 		5CFE960B23F49B7300D398FF /* CountriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CFE960D23F49B7300D398FF /* CountriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTests.swift; sourceTree = "<group>"; };
 		5CFE960F23F49B7300D398FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CFE961523F49BCE00D398FF /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
+		5CFE961623F49D3300D398FF /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
+		5CFE961823F49D6100D398FF /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		5CFE961C23F4A43400D398FF /* allCountries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = allCountries.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +91,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C1B864823F98605003E7424 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B864923F98622003E7424 /* RCNetworkingHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5C69E48023F9D69200363E1A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CFE960F23F49B7300D398FF /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5CFE95B123F00FCF00D398FF = {
 			isa = PBXGroup;
 			children = (
@@ -213,10 +241,32 @@
 			isa = PBXGroup;
 			children = (
 				5CFE961523F49BCE00D398FF /* TestPlan.xctestplan */,
-				5CFE960D23F49B7300D398FF /* CountriesTests.swift */,
-				5CFE960F23F49B7300D398FF /* Info.plist */,
+				5C1B864B23F9D298003E7424 /* APITests.swift */,
+				5C69E48323F9D83300363E1A /* CountryTests.swift */,
+				5CFE961623F49D3300D398FF /* NetworkingTests.swift */,
+				5CFE961B23F4A40E00D398FF /* TestData */,
+				5CFE961A23F49D6600D398FF /* Mocks */,
+				5C1B864823F98605003E7424 /* Helpers */,
+				5C69E48023F9D69200363E1A /* Supporting Files */,
 			);
 			path = CountriesTests;
+			sourceTree = "<group>";
+		};
+		5CFE961A23F49D6600D398FF /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5CFE961823F49D6100D398FF /* URLProtocolMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		5CFE961B23F4A40E00D398FF /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				5CFE961C23F4A43400D398FF /* allCountries.json */,
+				5C69E48123F9D70000363E1A /* oneCountry.json */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +360,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CFE961D23F4A43400D398FF /* allCountries.json in Resources */,
+				5C69E48223F9D70100363E1A /* oneCountry.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +392,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CFE960E23F49B7300D398FF /* CountriesTests.swift in Sources */,
+				5C1B864A23F98622003E7424 /* RCNetworkingHelper.swift in Sources */,
+				5CFE961923F49D6100D398FF /* URLProtocolMock.swift in Sources */,
+				5CFE961723F49D3300D398FF /* NetworkingTests.swift in Sources */,
+				5C1B864C23F9D298003E7424 /* APITests.swift in Sources */,
+				5C69E48423F9D83300363E1A /* CountryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +582,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZGNJ8Z375R;
-				INFOPLIST_FILE = CountriesTests/Info.plist;
+				INFOPLIST_FILE = "CountriesTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -546,7 +602,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZGNJ8Z375R;
-				INFOPLIST_FILE = CountriesTests/Info.plist;
+				INFOPLIST_FILE = "CountriesTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

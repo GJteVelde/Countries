@@ -31,7 +31,7 @@ extension Networking {
             .eraseToAnyPublisher()
     }
     
-    private func createUrlRequest(from api: API) -> URLRequest? {
+    func createUrlRequest(from api: API) -> URLRequest? {
         
         var components = URLComponents()
         components.scheme = api.scheme
