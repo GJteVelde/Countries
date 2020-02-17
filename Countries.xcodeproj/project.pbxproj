@@ -11,6 +11,7 @@
 		5C1B864C23F9D298003E7424 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B864B23F9D298003E7424 /* APITests.swift */; };
 		5C69E48223F9D70100363E1A /* oneCountry.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C69E48123F9D70000363E1A /* oneCountry.json */; };
 		5C69E48423F9D83300363E1A /* CountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69E48323F9D83300363E1A /* CountryTests.swift */; };
+		5C69E48723F9E41500363E1A /* FlagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69E48623F9E41500363E1A /* FlagImage.swift */; };
 		5CFE95BE23F00FCF00D398FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95BD23F00FCF00D398FF /* AppDelegate.swift */; };
 		5CFE95C023F00FCF00D398FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95BF23F00FCF00D398FF /* SceneDelegate.swift */; };
 		5CFE95C223F00FCF00D398FF /* CountryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95C123F00FCF00D398FF /* CountryListView.swift */; };
@@ -47,6 +48,7 @@
 		5C1B864B23F9D298003E7424 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		5C69E48123F9D70000363E1A /* oneCountry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = oneCountry.json; sourceTree = "<group>"; };
 		5C69E48323F9D83300363E1A /* CountryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTests.swift; sourceTree = "<group>"; };
+		5C69E48623F9E41500363E1A /* FlagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImage.swift; sourceTree = "<group>"; };
 		5CFE95BA23F00FCF00D398FF /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFE95BD23F00FCF00D398FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CFE95BF23F00FCF00D398FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5C69E48523F9E3F700363E1A /* Helper Views */ = {
+			isa = PBXGroup;
+			children = (
+				5C69E48623F9E41500363E1A /* FlagImage.swift */,
+			);
+			path = "Helper Views";
+			sourceTree = "<group>";
+		};
 		5CFE95B123F00FCF00D398FF = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				5CFE95D923F0126C00D398FF /* CountryList */,
+				5C69E48523F9E3F700363E1A /* Helper Views */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -375,6 +386,7 @@
 				5CFE95D623F011A300D398FF /* Country.swift in Sources */,
 				5CFE95EE23F2016E00D398FF /* Networking.swift in Sources */,
 				5CFE95D823F0125C00D398FF /* CountryListViewModel.swift in Sources */,
+				5C69E48723F9E41500363E1A /* FlagImage.swift in Sources */,
 				5CFE95F423F333C700D398FF /* RCRepository.swift in Sources */,
 				5CFE95BE23F00FCF00D398FF /* AppDelegate.swift in Sources */,
 				5CFE95F023F202AA00D398FF /* RCNetworker.swift in Sources */,

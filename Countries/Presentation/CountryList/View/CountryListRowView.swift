@@ -18,6 +18,9 @@ struct CountryListRowView: View {
     
     var body: some View {
         HStack {
+            FlagImage(flag: viewModel.$flag, code: viewModel.id)
+                .frame(width: 50, height: 50)
+            
             Text(viewModel.name)
             
             Spacer()
@@ -26,11 +29,13 @@ struct CountryListRowView: View {
 }
 
 struct CountryListRowView_Previews: PreviewProvider {
-    static var country = Country(alpha3Code: "COL", name: "Colombia")
+    static var country = Country(alpha3Code: "NLD", name: "Netherlands")
     static var viewModel = CountryListRowViewModel(country: country)
     
     static var previews: some View {
-        CountryListRowView(viewModel: viewModel)
-            .previewLayout(.sizeThatFits)
+        Group {
+            CountryListRowView(viewModel: viewModel)
+                .previewLayout(.sizeThatFits)
+        }
     }
 }

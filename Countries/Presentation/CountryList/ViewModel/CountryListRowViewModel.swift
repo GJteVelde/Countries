@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class CountryListRowViewModel {
     
@@ -20,6 +21,7 @@ class CountryListRowViewModel {
         return country.name ?? "Unknown"
     }
     
+    @State var flag: Image? = nil
 }
 
 extension CountryListRowViewModel: Identifiable {
