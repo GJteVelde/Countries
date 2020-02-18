@@ -11,7 +11,7 @@ import Combine
 
 class RCNetworker: Networking {
     
-    static let shared: RCNetworker = RCNetworker()
+    static let shared = RCNetworker()
     
     var session: URLSession
     

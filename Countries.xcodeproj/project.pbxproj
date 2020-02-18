@@ -12,6 +12,10 @@
 		5C69E48223F9D70100363E1A /* oneCountry.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C69E48123F9D70000363E1A /* oneCountry.json */; };
 		5C69E48423F9D83300363E1A /* CountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69E48323F9D83300363E1A /* CountryTests.swift */; };
 		5C69E48723F9E41500363E1A /* FlagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69E48623F9E41500363E1A /* FlagImage.swift */; };
+		5C92E2A523FC775200844F26 /* CFApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E2A423FC775200844F26 /* CFApi.swift */; };
+		5C92E2A723FC797500844F26 /* CFNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E2A623FC797500844F26 /* CFNetworker.swift */; };
+		5C92E2A923FC7C4B00844F26 /* CFRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E2A823FC7C4B00844F26 /* CFRepository.swift */; };
+		5C92E2AB23FC7C8400844F26 /* CFWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E2AA23FC7C8400844F26 /* CFWebRepository.swift */; };
 		5CFE95BE23F00FCF00D398FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95BD23F00FCF00D398FF /* AppDelegate.swift */; };
 		5CFE95C023F00FCF00D398FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95BF23F00FCF00D398FF /* SceneDelegate.swift */; };
 		5CFE95C223F00FCF00D398FF /* CountryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95C123F00FCF00D398FF /* CountryListView.swift */; };
@@ -49,6 +53,10 @@
 		5C69E48123F9D70000363E1A /* oneCountry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = oneCountry.json; sourceTree = "<group>"; };
 		5C69E48323F9D83300363E1A /* CountryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTests.swift; sourceTree = "<group>"; };
 		5C69E48623F9E41500363E1A /* FlagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImage.swift; sourceTree = "<group>"; };
+		5C92E2A423FC775200844F26 /* CFApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFApi.swift; sourceTree = "<group>"; };
+		5C92E2A623FC797500844F26 /* CFNetworker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFNetworker.swift; sourceTree = "<group>"; };
+		5C92E2A823FC7C4B00844F26 /* CFRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFRepository.swift; sourceTree = "<group>"; };
+		5C92E2AA23FC7C8400844F26 /* CFWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFWebRepository.swift; sourceTree = "<group>"; };
 		5CFE95BA23F00FCF00D398FF /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFE95BD23F00FCF00D398FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CFE95BF23F00FCF00D398FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +123,17 @@
 				5C69E48623F9E41500363E1A /* FlagImage.swift */,
 			);
 			path = "Helper Views";
+			sourceTree = "<group>";
+		};
+		5C92E2A323FC772F00844F26 /* CountryFlags */ = {
+			isa = PBXGroup;
+			children = (
+				5C92E2A423FC775200844F26 /* CFApi.swift */,
+				5C92E2A623FC797500844F26 /* CFNetworker.swift */,
+				5C92E2A823FC7C4B00844F26 /* CFRepository.swift */,
+				5C92E2AA23FC7C8400844F26 /* CFWebRepository.swift */,
+			);
+			path = CountryFlags;
 			sourceTree = "<group>";
 		};
 		5CFE95B123F00FCF00D398FF = {
@@ -189,6 +208,7 @@
 				5CFE95E723F1FF0400D398FF /* Protocol */,
 				5CFE95E123F0818F00D398FF /* Model */,
 				5CFE95EA23F1FFE500D398FF /* RestCountries */,
+				5C92E2A323FC772F00844F26 /* CountryFlags */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -387,12 +407,16 @@
 				5CFE95EE23F2016E00D398FF /* Networking.swift in Sources */,
 				5CFE95D823F0125C00D398FF /* CountryListViewModel.swift in Sources */,
 				5C69E48723F9E41500363E1A /* FlagImage.swift in Sources */,
+				5C92E2A523FC775200844F26 /* CFApi.swift in Sources */,
 				5CFE95F423F333C700D398FF /* RCRepository.swift in Sources */,
+				5C92E2A723FC797500844F26 /* CFNetworker.swift in Sources */,
+				5C92E2A923FC7C4B00844F26 /* CFRepository.swift in Sources */,
 				5CFE95BE23F00FCF00D398FF /* AppDelegate.swift in Sources */,
 				5CFE95F023F202AA00D398FF /* RCNetworker.swift in Sources */,
 				5CFE95C023F00FCF00D398FF /* SceneDelegate.swift in Sources */,
 				5CFE95F623F34CC200D398FF /* RCWebRepository.swift in Sources */,
 				5CFE95EC23F1FFF400D398FF /* RCApi.swift in Sources */,
+				5C92E2AB23FC7C8400844F26 /* CFWebRepository.swift in Sources */,
 				5CFE95DF23F0138C00D398FF /* CountryListRowViewModel.swift in Sources */,
 				5CFE95DD23F0134B00D398FF /* CountryListRowView.swift in Sources */,
 				5CFE95E923F1FF1700D398FF /* API.swift in Sources */,

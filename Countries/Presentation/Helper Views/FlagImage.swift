@@ -10,7 +10,7 @@ import SwiftUI
 
 struct FlagImage: View {
     
-    @Binding var flag: Image?
+    var flag: Image?
     let code: String
     
     var body: some View {
@@ -68,14 +68,14 @@ struct FlagImage_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            FlagImage(flag: .constant(Image("nld")), code: "nld")
+            FlagImage(flag: Image("nld"), code: "nld")
                 .previewLayout(.fixed(width: 400, height: 400))
             
-            FlagImage(flag: .constant(nil), code: "nld")
+            FlagImage(flag: nil, code: "nld")
                 .previewLayout(.fixed(width: 200, height: 400))
                 .previewDisplayName("Rectangle. No image.")
             
-            FlagImage(flag: .constant(nil), code: "nld")
+            FlagImage(flag: nil, code: "nld")
                 .previewLayout(.fixed(width: 400, height: 200))
                 .environment(\.colorScheme, .dark)
                 .previewDisplayName("Rectangle. No image. DarkMode.")

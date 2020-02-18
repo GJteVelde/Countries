@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CountryListRowView: View {
     
-    let viewModel: CountryListRowViewModel
+    @ObservedObject var viewModel: CountryListRowViewModel
     
     init(viewModel: CountryListRowViewModel) {
         self.viewModel = viewModel
@@ -18,12 +18,14 @@ struct CountryListRowView: View {
     
     var body: some View {
         HStack {
-            FlagImage(flag: viewModel.$flag, code: viewModel.id)
+            FlagImage(flag: viewModel.flag, code: viewModel.id)
                 .frame(width: 50, height: 50)
             
             Text(viewModel.name)
             
             Spacer()
+        }.onAppear {
+            self.viewModel.fetchFlag()
         }
     }
 }

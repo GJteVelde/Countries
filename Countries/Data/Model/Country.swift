@@ -12,7 +12,7 @@ struct Country: Codable {
     
     var alpha3Code: String
     var name: String?
-    
+    var alpha2Code: String?
 }
 
 extension Country: Identifiable {
