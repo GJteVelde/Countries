@@ -11,11 +11,11 @@
 		5C1B864C23F9D298003E7424 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B864B23F9D298003E7424 /* APITests.swift */; };
 		5C69E48223F9D70100363E1A /* oneCountry.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C69E48123F9D70000363E1A /* oneCountry.json */; };
 		5C69E48423F9D83300363E1A /* CountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69E48323F9D83300363E1A /* CountryTests.swift */; };
-		5C69E48723F9E41500363E1A /* FlagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C69E48623F9E41500363E1A /* FlagImage.swift */; };
 		5C92E2A523FC775200844F26 /* CFApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E2A423FC775200844F26 /* CFApi.swift */; };
 		5C92E2A723FC797500844F26 /* CFNetworker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E2A623FC797500844F26 /* CFNetworker.swift */; };
 		5C92E2A923FC7C4B00844F26 /* CFRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E2A823FC7C4B00844F26 /* CFRepository.swift */; };
 		5C92E2AB23FC7C8400844F26 /* CFWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E2AA23FC7C8400844F26 /* CFWebRepository.swift */; };
+		5C92E2AD23FF21D300844F26 /* FlagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E2AC23FF21D300844F26 /* FlagImage.swift */; };
 		5CFE95BE23F00FCF00D398FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95BD23F00FCF00D398FF /* AppDelegate.swift */; };
 		5CFE95C023F00FCF00D398FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95BF23F00FCF00D398FF /* SceneDelegate.swift */; };
 		5CFE95C223F00FCF00D398FF /* CountryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95C123F00FCF00D398FF /* CountryListView.swift */; };
@@ -52,11 +52,11 @@
 		5C1B864B23F9D298003E7424 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		5C69E48123F9D70000363E1A /* oneCountry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = oneCountry.json; sourceTree = "<group>"; };
 		5C69E48323F9D83300363E1A /* CountryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTests.swift; sourceTree = "<group>"; };
-		5C69E48623F9E41500363E1A /* FlagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImage.swift; sourceTree = "<group>"; };
 		5C92E2A423FC775200844F26 /* CFApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFApi.swift; sourceTree = "<group>"; };
 		5C92E2A623FC797500844F26 /* CFNetworker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFNetworker.swift; sourceTree = "<group>"; };
 		5C92E2A823FC7C4B00844F26 /* CFRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFRepository.swift; sourceTree = "<group>"; };
 		5C92E2AA23FC7C8400844F26 /* CFWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFWebRepository.swift; sourceTree = "<group>"; };
+		5C92E2AC23FF21D300844F26 /* FlagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImage.swift; sourceTree = "<group>"; };
 		5CFE95BA23F00FCF00D398FF /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFE95BD23F00FCF00D398FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CFE95BF23F00FCF00D398FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		5C69E48523F9E3F700363E1A /* Helper Views */ = {
 			isa = PBXGroup;
 			children = (
-				5C69E48623F9E41500363E1A /* FlagImage.swift */,
+				5C92E2AC23FF21D300844F26 /* FlagImage.swift */,
 			);
 			path = "Helper Views";
 			sourceTree = "<group>";
@@ -406,7 +406,6 @@
 				5CFE95D623F011A300D398FF /* Country.swift in Sources */,
 				5CFE95EE23F2016E00D398FF /* Networking.swift in Sources */,
 				5CFE95D823F0125C00D398FF /* CountryListViewModel.swift in Sources */,
-				5C69E48723F9E41500363E1A /* FlagImage.swift in Sources */,
 				5C92E2A523FC775200844F26 /* CFApi.swift in Sources */,
 				5CFE95F423F333C700D398FF /* RCRepository.swift in Sources */,
 				5C92E2A723FC797500844F26 /* CFNetworker.swift in Sources */,
@@ -421,6 +420,7 @@
 				5CFE95DD23F0134B00D398FF /* CountryListRowView.swift in Sources */,
 				5CFE95E923F1FF1700D398FF /* API.swift in Sources */,
 				5CFE95C223F00FCF00D398FF /* CountryListView.swift in Sources */,
+				5C92E2AD23FF21D300844F26 /* FlagImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

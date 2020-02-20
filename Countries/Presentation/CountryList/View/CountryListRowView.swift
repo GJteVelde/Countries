@@ -18,7 +18,7 @@ struct CountryListRowView: View {
     
     var body: some View {
         HStack {
-            FlagImage(flag: viewModel.flag, code: viewModel.id)
+            FlagImage(code: viewModel.id, flag: $viewModel.flag)
                 .frame(width: 50, height: 50)
             
             Text(viewModel.name)

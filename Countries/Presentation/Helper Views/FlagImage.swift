@@ -2,7 +2,7 @@
 //  FlagImage.swift
 //  Countries
 //
-//  Created by Gerrit Jan te Velde on 16.02.20.
+//  Created by Gerrit Jan te Velde on 20.02.20.
 //  Copyright © 2020 Gerrit Jan te Velde. All rights reserved.
 //
 
@@ -10,75 +10,57 @@ import SwiftUI
 
 struct FlagImage: View {
     
-    var flag: Image?
     let code: String
+    @Binding var flag: Image?
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                if self.flag != nil {
-                    self.flagImage(flag: self.flag!, size: geometry.size)
+            Group {
+                if self.flag == nil {
+                    ZStack {
+                        Circle()
+                            .fill(Color.gray)
+                            .overlay(Circle().strokeBorder(Color.white, lineWidth: self.minSize(geometry.size) * 0.02))
+                            .shadow(radius: self.minSize(geometry.size) * 0.04)
+                        
+                        Text(self.code.uppercased())
+                            .foregroundColor(.secondary)
+                            .font(.system(size: self.minSize(geometry.size) * 0.4, weight: .heavy, design: .monospaced))
+                    }
+                        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
                 } else {
-                    self.circleBackground(size: geometry.size)
-                    self.codeText(size: geometry.size)
+                    self.flag!
+                        .resizable(resizingMode: .stretch)
+                        .background(Color.secondary)
+                        .clipShape(Circle())
+                        .overlay(Circle().strokeBorder(Color.white, lineWidth: self.minSize(geometry.size) * 0.02))
+                        .shadow(radius: self.minSize(geometry.size) * 0.04)
+                        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
                 }
             }
         }
     }
-}
-
-extension FlagImage {
     
-    private func circleBackground(size: CGSize) -> some View {
-        let minSize = min(size.width, size.height)
-        
-        return Circle()
-            .fill(Color.gray)
-            .overlay(
-                Circle().strokeBorder(Color.white, lineWidth: minSize * 0.02)
-            )
-            .shadow(radius: minSize * 0.04)
-            .frame(width: minSize, height: minSize)
-    }
-    
-    private func flagImage(flag: Image, size: CGSize) -> some View {
-        let minSize = min(size.width, size.height)
-        
-        return flag
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .clipShape(Circle())
-            .overlay(
-                Circle().strokeBorder(Color.white, lineWidth: minSize * 0.02)
-            )
-            .shadow(radius: minSize * 0.04)
-            .frame(width: minSize, height: minSize)
-    }
-    
-    private func codeText(size: CGSize) -> some View {
-        let minSize = min(size.width, size.height)
-        
-        return Text(code.uppercased())
-            .foregroundColor(.secondary)
-            .font(.system(size: minSize * 0.4, weight: .heavy, design: .monospaced))
+    private func minSize(_ size: CGSize) -> CGFloat {
+        return min(size.width, size.height)
     }
 }
 
 struct FlagImage_Previews: PreviewProvider {
-    
     static var previews: some View {
         Group {
-            FlagImage(flag: Image("nld"), code: "nld")
+            FlagImage(code: "nld", flag: .constant(Image("nld")))
                 .previewLayout(.fixed(width: 400, height: 400))
+                .previewDisplayName("Square. Image.")
             
-            FlagImage(flag: nil, code: "nld")
+            FlagImage(code: "nld", flag: .constant(nil))
                 .previewLayout(.fixed(width: 200, height: 400))
-                .previewDisplayName("Rectangle. No image.")
+                .previewDisplayName("Rectangle. No Image.")
             
-            FlagImage(flag: nil, code: "nld")
+            FlagImage(code: "nld", flag: .constant(nil))
                 .previewLayout(.fixed(width: 400, height: 200))
                 .environment(\.colorScheme, .dark)
-                .previewDisplayName("Rectangle. No image. DarkMode.")
+            .previewDisplayName("Rectangle. No Image. Dark Mode.")
         }
     }
 }
