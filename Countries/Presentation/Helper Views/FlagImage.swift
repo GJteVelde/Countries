@@ -15,26 +15,22 @@ struct FlagImage: View {
     
     var body: some View {
         GeometryReader { geometry in
-            Group {
+            ZStack {
+                Circle()
+                    .fill(Color.secondary)
+                    .overlay(Circle().strokeBorder(Color.primary, lineWidth: self.minSize(geometry.size) * 0.02))
+                    .shadow(radius: self.minSize(geometry.size) * 0.04)
+                
                 if self.flag == nil {
-                    ZStack {
-                        Circle()
-                            .fill(Color.gray)
-                            .overlay(Circle().strokeBorder(Color.white, lineWidth: self.minSize(geometry.size) * 0.02))
-                            .shadow(radius: self.minSize(geometry.size) * 0.04)
-                        
-                        Text(self.code.uppercased())
-                            .foregroundColor(.secondary)
-                            .font(.system(size: self.minSize(geometry.size) * 0.4, weight: .heavy, design: .monospaced))
-                    }
+                    Text(self.code.uppercased())
+                        .foregroundColor(.primary)
+                        .font(.system(size: self.minSize(geometry.size) * 0.4, weight: .heavy, design: .monospaced))
                         .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
                 } else {
                     self.flag!
                         .resizable(resizingMode: .stretch)
-                        .background(Color.secondary)
                         .clipShape(Circle())
-                        .overlay(Circle().strokeBorder(Color.white, lineWidth: self.minSize(geometry.size) * 0.02))
-                        .shadow(radius: self.minSize(geometry.size) * 0.04)
+                        .frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.96)
                         .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
                 }
             }
@@ -50,17 +46,20 @@ struct FlagImage_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             FlagImage(code: "nld", flag: .constant(Image("nld")))
-                .previewLayout(.fixed(width: 400, height: 400))
-                .previewDisplayName("Square. Image.")
+                .previewLayout(.fixed(width: 200, height: 200))
             
-            FlagImage(code: "nld", flag: .constant(nil))
-                .previewLayout(.fixed(width: 200, height: 400))
-                .previewDisplayName("Rectangle. No Image.")
-            
-            FlagImage(code: "nld", flag: .constant(nil))
-                .previewLayout(.fixed(width: 400, height: 200))
+            FlagImage(code: "nld", flag: .constant(Image("nld")))
+                .previewLayout(.fixed(width: 200, height: 200))
                 .environment(\.colorScheme, .dark)
-            .previewDisplayName("Rectangle. No Image. Dark Mode.")
+                .previewDisplayName("Dark Mode.")
+            
+            FlagImage(code: "nld", flag: .constant(nil))
+                .previewLayout(.fixed(width: 100, height: 200))
+            
+            FlagImage(code: "nld", flag: .constant(nil))
+                .previewLayout(.fixed(width: 200, height: 100))
+                .environment(\.colorScheme, .dark)
+                .previewDisplayName("Dark Mode.")
         }
     }
 }
