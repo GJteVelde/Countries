@@ -1,5 +1,5 @@
 //
-//  RCNetworkingHelper.swift
+//  NetworkingHelper.swift
 //  CountriesTests
 //
 //  Created by Gerrit Jan te Velde on 16.02.20.
@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 @testable import Countries
 
 enum NetworkingHelperError: Error {
@@ -17,14 +18,13 @@ enum NetworkingHelperError: Error {
     case invalidURL
 }
 
-class RCNetworkingHelper {
+class NetworkingHelper {
     
-    /// Initializes a `RCNetworker` object that uses the `URLProtocolMock`. Use `prepareTest(request: fileName:)` to insert the appropriate data for the request being tested.
-    func createRCNetworkingMock() -> RCNetworker {
+    /// Creates and returns a URLSession for testing purposes. Add data to the `URLProtocolMock` via `prepareTest(request: fileName:)`.
+    func createURLSession() -> URLSession {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [URLProtocolMock.self]
-        let session = URLSession(configuration: config)
-        return RCNetworker(session: session)
+        return URLSession(configuration: config)
     }
     
     /// Inserts the data of the file in the URLProtocolMock.
@@ -59,7 +59,7 @@ class RCNetworkingHelper {
     }
 }
 
-extension RCNetworkingHelper {
+extension NetworkingHelper {
     private func returnDataFromFile(_ fileName: String) throws -> Data {
         guard let pathString = Bundle(for: type(of: self)).path(forResource: fileName, ofType: "json") else {
             throw NetworkingHelperError.fileNotFound(name: fileName)

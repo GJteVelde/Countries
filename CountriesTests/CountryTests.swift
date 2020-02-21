@@ -18,10 +18,12 @@ class CountryTests: XCTestCase {
     func test_Country_CorrectDecoding() {
         
         do {
-            let data = try RCNetworkingHelper().dataFromFile("oneCountry")
+            let data = try NetworkingHelper().dataFromFile("oneCountry")
             let country = try JSONDecoder().decode(Country.self, from: data)
             
+            XCTAssertEqual(country.id, country.alpha3Code)
             XCTAssertEqual(country.alpha3Code, "AFG")
+            XCTAssertEqual(country.alpha2Code, "AF")
             XCTAssertEqual(country.id, "AFG")
             XCTAssertEqual(country.name, "Afghanistan")
         } catch {
