@@ -18,7 +18,15 @@ struct CountryListView: View {
     
     var body: some View {
         NavigationView {
-            content()
+            Group {
+                if viewModel.isLoading {
+                    loadingView
+                } else if viewModel.countries.isEmpty {
+                    emptyListView
+                } else {
+                    listView
+                }
+            }
         
             .navigationBarTitle("Countries")
         }.onAppear {
@@ -29,14 +37,8 @@ struct CountryListView: View {
 
 extension CountryListView {
     
-    private func content() -> some View {
-        Group {
-            if viewModel.countries.isEmpty {
-                emptyListView
-            } else {
-                listView
-            }
-        }
+    private var loadingView: some View {
+        LoadingView(message: "Countries are being loaded...")
     }
     
     private var emptyListView: some View {

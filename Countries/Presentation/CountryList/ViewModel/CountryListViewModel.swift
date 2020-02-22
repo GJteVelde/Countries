@@ -16,6 +16,8 @@ enum APIError: Error {
 
 class CountryListViewModel: ObservableObject {
     
+    @Published var isLoading = false
+    
     @Published var countries = [CountryListRowViewModel]()
     
     private var rcCountries = [Country]() {
@@ -35,18 +37,20 @@ class CountryListViewModel: ObservableObject {
     }
     
     func fetchAll() {
-        repository.getAll()
+        isLoading = true
+        
+        self.repository.getAll()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { (completion) in
                 switch completion {
                 case .finished:
-                    break
+                    self.isLoading = false
                 case .failure(let error):
                     print("Error: \(error.localizedDescription)")
                 }
             }) { (countries) in
                 self.rcCountries = countries
             }
-            .store(in: &cancellable)
+            .store(in: &self.cancellable)
     }
 }
