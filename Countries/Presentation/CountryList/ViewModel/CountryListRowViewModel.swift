@@ -12,9 +12,11 @@ import Combine
 
 class CountryListRowViewModel: ObservableObject {
     
-    var country: Country
-    
     @Published var flag: Image? = nil
+    
+    @Published var showDetails: Bool = false
+    
+    private var country: Country
     
     private var cancellable = Set<AnyCancellable>()
     
@@ -29,6 +31,21 @@ class CountryListRowViewModel: ObservableObject {
         return country.name ?? "Unknown"
     }
     
+    var capital: String? {
+        return country.capital
+    }
+    
+    var region: String? {
+        switch (country.region, country.subregion) {
+        case (.some(let region), let .some(subregion)):     return "\(region) (\(subregion))"
+        case (.some(let region), .none):                    return region
+        case (.none, .some(let subregion)):                 return "(\(subregion))"
+        case (.none, .none):                                return nil
+        }
+    }
+}
+
+extension CountryListRowViewModel {
     func fetchFlag() {
         guard let alpha2Code = country.alpha2Code else { return }
         
@@ -37,7 +54,7 @@ class CountryListRowViewModel: ObservableObject {
             .sink(receiveCompletion: { (completion) in
                 switch completion {
                 case .finished:
-                    print("✅ finished for \(alpha2Code).")
+                    break
                 case .failure(let error):
                     print("❌ \(error.localizedDescription)")
                 }

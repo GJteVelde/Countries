@@ -30,7 +30,7 @@ struct LoadingView: View {
                 .rotationEffect(.degrees(spin ? 180 : 0))
                 .animation(
                     Animation
-                        .spring(response: 0.5, dampingFraction: 1, blendDuration: 0.1)
+                        .spring(response: 0.2, dampingFraction: 1, blendDuration: 0.1)
                         .repeatForever(autoreverses: false)
                 )
                 .onAppear {

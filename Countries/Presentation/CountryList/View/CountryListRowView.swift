@@ -17,27 +17,75 @@ struct CountryListRowView: View {
     }
     
     var body: some View {
-        HStack {
-            FlagImage(code: viewModel.id, flag: $viewModel.flag)
+        HStack(alignment: .top) {
+            FlagImage(code: viewModel.id, flag: $viewModel.flag, isSelected: $viewModel.showDetails)
                 .frame(width: 50, height: 50)
             
-            Text(viewModel.name)
-            
-            Spacer()
-        }.onAppear {
+            VStack(alignment: .leading) {
+                Text(viewModel.name)
+                    .frame(height: 50)
+                
+                if viewModel.showDetails {
+                    detailsView
+                        .transition(.moveAndFade)
+                }
+            }
+        }
+        .frame(minWidth: 50, maxWidth: .infinity, alignment: .topLeading)
+        .onTapGesture {
+            self.viewModel.showDetails.toggle()
+        }
+        .onAppear {
             self.viewModel.fetchFlag()
+        }
+    }
+    
+    var detailsView: some View {
+        VStack {
+            viewModel.capital.map {     DetailRow(name: "Capital", content: $0) }
+            viewModel.region.map {      DetailRow(name: "Region", content: $0) }
         }
     }
 }
 
+private extension CountryListRowView {
+    struct DetailRow: View {
+        var name: String
+        var content: String
+    
+        var body: some View {
+            HStack {
+                Text(name)
+                    .font(.footnote)
+                
+                Spacer()
+                
+                Text(content)
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+            }
+        }
+    }
+}
+
+fileprivate extension AnyTransition {
+    static var moveAndFade: AnyTransition {
+        let insertion = AnyTransition.move(edge: .top).combined(with: .opacity)
+        let removal = AnyTransition.move(edge: .top).combined(with: .opacity)
+        return .asymmetric(insertion: insertion, removal: removal)
+    }
+}
+
 struct CountryListRowView_Previews: PreviewProvider {
-    static var country = Country(alpha3Code: "NLD", name: "Netherlands")
-    static var viewModel = CountryListRowViewModel(country: country)
+    static var country = Country(alpha3Code: "NLD", alpha2Code: "NL", name: "The Netherlands", capital: "Amsterdam", region: "Europe", subregion: "Western Europe")
+    static var viewModel: CountryListRowViewModel = {
+        let v = CountryListRowViewModel(country: country)
+        v.showDetails = true
+        return v
+    }()
     
     static var previews: some View {
-        Group {
-            CountryListRowView(viewModel: viewModel)
-                .previewLayout(.sizeThatFits)
-        }
+        CountryListRowView(viewModel: viewModel)
+            .previewLayout(.fixed(width: 300, height: 100))
     }
 }

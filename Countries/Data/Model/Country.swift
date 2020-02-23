@@ -11,8 +11,12 @@ import Foundation
 struct Country: Codable {
     
     var alpha3Code: String
-    var name: String?
     var alpha2Code: String?
+    
+    var name: String?
+    var capital: String?
+    var region: String?
+    var subregion: String?
 }
 
 extension Country: Identifiable {

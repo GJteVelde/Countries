@@ -47,10 +47,21 @@ extension CountryListView {
     }
     
     private var listView: some View {
-        List {
-            ForEach(viewModel.countries) { countryListRowViewModel in
-                CountryListRowView(viewModel: countryListRowViewModel)
-            }
+        ScrollView {
+            ForEach(viewModel.countries) {
+                CountryListRowView(viewModel: $0)
+                    .modifier(ListRowModifier())
+                    .animation(.easeInOut)
+            }.padding()
+        }
+    }
+}
+
+struct ListRowModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        Group {
+            content
+            Divider()
         }
     }
 }
