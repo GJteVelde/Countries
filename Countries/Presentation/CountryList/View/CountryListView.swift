@@ -29,6 +29,7 @@ struct CountryListView: View {
             }
         
             .navigationBarTitle("Countries")
+            .navigationBarItems(trailing: collapseButton)
         }.onAppear {
             self.viewModel.fetchAll()
         }
@@ -48,12 +49,28 @@ extension CountryListView {
     
     private var listView: some View {
         ScrollView {
-            ForEach(viewModel.countries) {
-                CountryListRowView(viewModel: $0)
+            ForEach(viewModel.countries) { (vm) in
+                CountryListRowView(viewModel: vm)
                     .modifier(ListRowModifier())
                     .animation(.easeInOut)
+                    .onTapGesture {
+                        print("country with id \(vm.id) tapped")
+                        self.viewModel.selectDeselect(vm.id)
+                    }
             }.padding()
         }
+    }
+    
+    private var collapseButton: some View {
+        
+        Button(action: {
+            self.viewModel.hideDetailsForAllCountries()
+        }, label: {
+            Image(systemName: "arrowtriangle.right.fill")
+                .rotationEffect(.degrees(viewModel.showsDetails ? 90 : 0))
+                .scaleEffect(viewModel.showsDetails ? 1.5 : 1)
+                .animation(.easeInOut)
+        }).disabled(!viewModel.showsDetails)
     }
 }
 

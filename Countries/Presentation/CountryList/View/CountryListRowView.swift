@@ -30,11 +30,11 @@ struct CountryListRowView: View {
                         .transition(.moveAndFade)
                 }
             }
+            
+            Spacer()
         }
+        .contentShape(Rectangle())
         .frame(minWidth: 50, maxWidth: .infinity, alignment: .topLeading)
-        .onTapGesture {
-            self.viewModel.showDetails.toggle()
-        }
         .onAppear {
             self.viewModel.fetchFlag()
         }
@@ -76,16 +76,15 @@ fileprivate extension AnyTransition {
     }
 }
 
-struct CountryListRowView_Previews: PreviewProvider {
-    static var country = Country(alpha3Code: "NLD", alpha2Code: "NL", name: "The Netherlands", capital: "Amsterdam", region: "Europe", subregion: "Western Europe")
-    static var viewModel: CountryListRowViewModel = {
-        let v = CountryListRowViewModel(country: country)
-        v.showDetails = true
-        return v
-    }()
-    
-    static var previews: some View {
-        CountryListRowView(viewModel: viewModel)
-            .previewLayout(.fixed(width: 300, height: 100))
-    }
-}
+//struct CountryListRowView_Previews: PreviewProvider {
+//    static var viewModel: CountryListRowViewModel = {
+//        let v = CountryListRowViewModel(country: Country.Netherlands)
+//        v.showDetails = true
+//        return v
+//    }()
+//
+//    static var previews: some View {
+//        CountryListRowView(viewModel: viewModel)
+//            .previewLayout(.fixed(width: 400, height: 100))
+//    }
+//}

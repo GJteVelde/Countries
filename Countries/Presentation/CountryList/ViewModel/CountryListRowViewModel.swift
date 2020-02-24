@@ -14,16 +14,17 @@ class CountryListRowViewModel: ObservableObject {
     
     @Published var flag: Image? = nil
     
-    @Published var showDetails: Bool = false
+    @Published var showDetails: Bool
     
     private var country: Country
     
-    private var cancellable = Set<AnyCancellable>()
-    
     private let repository: FlagsRepository
     
-    init(country: Country, repository: FlagsRepository = FlagsWebRepository()) {
+    private var cancellable = Set<AnyCancellable>()
+    
+    init(country: Country, showDetails: Bool, repository: FlagsRepository = FlagsWebRepository()) {
         self.country = country
+        self.showDetails = showDetails
         self.repository = repository
     }
     
@@ -46,6 +47,7 @@ class CountryListRowViewModel: ObservableObject {
 }
 
 extension CountryListRowViewModel {
+    
     func fetchFlag() {
         guard let alpha2Code = country.alpha2Code else { return }
         

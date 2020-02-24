@@ -25,3 +25,15 @@ extension Country: Identifiable {
         return alpha3Code
     }
 }
+
+#if DEBUG
+extension Country {
+    
+    static var Netherlands = Country(alpha3Code: "NLD",
+                                     alpha2Code: "NL",
+                                     name: "The Netherlands",
+                                     capital: "Amsterdam",
+                                     region: "Europe",
+                                     subregion: "Western Europe")
+}
+#endif
