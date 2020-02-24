@@ -1,6 +1,6 @@
 
 //
-//  RCRepository.swift
+//  CountriesRepository.swift
 //  Countries
 //
 //  Created by Gerrit Jan te Velde on 11.02.20.
@@ -10,7 +10,7 @@
 import Foundation
 import Combine
 
-protocol RCRepository {
+protocol CountriesRepository {
     
     func getAll() -> AnyPublisher<[Country], Error>
     

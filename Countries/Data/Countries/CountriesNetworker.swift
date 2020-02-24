@@ -1,5 +1,5 @@
 //
-//  RCNetworker.swift
+//  CountriesNetworker.swift
 //  Countries
 //
 //  Created by Gerrit Jan te Velde on 10.02.20.
@@ -9,9 +9,9 @@
 import Foundation
 import Combine
 
-class RCNetworker: Networking {
+class CountriesNetworker: Networking {
     
-    static let shared = RCNetworker()
+    static let shared = CountriesNetworker()
     
     var session: URLSession
     

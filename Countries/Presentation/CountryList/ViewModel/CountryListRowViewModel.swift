@@ -20,9 +20,9 @@ class CountryListRowViewModel: ObservableObject {
     
     private var cancellable = Set<AnyCancellable>()
     
-    private let repository: CFRepository
+    private let repository: FlagsRepository
     
-    init(country: Country, repository: CFRepository = CFWebRepository()) {
+    init(country: Country, repository: FlagsRepository = FlagsWebRepository()) {
         self.country = country
         self.repository = repository
     }

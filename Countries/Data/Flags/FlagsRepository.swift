@@ -1,5 +1,5 @@
 //
-//  CFRepository.swift
+//  FlagsRepository.swift
 //  Countries
 //
 //  Created by Gerrit Jan te Velde on 18.02.20.
@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-protocol CFRepository {
+protocol FlagsRepository {
     
     func get(id: String) -> AnyPublisher<Image, Error>
 }

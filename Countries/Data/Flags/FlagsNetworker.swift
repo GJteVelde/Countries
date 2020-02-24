@@ -1,5 +1,5 @@
 //
-//  CFNetworker.swift
+//  FlagsNetworker.swift
 //  Countries
 //
 //  Created by Gerrit Jan te Velde on 18.02.20.
@@ -10,9 +10,9 @@ import Foundation
 import Combine
 import SwiftUI
 
-class CFNetworker: Networking {
+class FlagsNetworker: Networking {
     
-    static let shared = CFNetworker()
+    static let shared = FlagsNetworker()
     
     var session: URLSession
     
@@ -26,7 +26,7 @@ class CFNetworker: Networking {
     }
 }
 
-extension CFNetworker {
+extension FlagsNetworker {
     
     private func fetch(api: CFApi) -> AnyPublisher<Image, Error> {
         guard let urlRequest = createUrlRequest(from: api) else {

@@ -11,13 +11,13 @@ import XCTest
 
 class CountryFlagsUnitTests: XCTestCase {
 
-    var networker: CFNetworker!
+    var networker: FlagsNetworker!
     
     override func setUp() {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [URLProtocolMock.self]
         let session = URLSession(configuration: config)
-        networker = CFNetworker(session: session)
+        networker = FlagsNetworker(session: session)
     }
 
     override func tearDown() {

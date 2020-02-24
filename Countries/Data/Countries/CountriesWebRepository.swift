@@ -1,5 +1,5 @@
 //
-//  RCWebRepository.swift
+//  CountriesRepository.swift
 //  Countries
 //
 //  Created by Gerrit Jan te Velde on 11.02.20.
@@ -9,13 +9,13 @@
 import Foundation
 import Combine
 
-class RCWebRepository: RCRepository {
+class CountriesWebRepository: CountriesRepository {
     
     typealias T = Country
     
     private let networker: Networking
     
-    init(networker: Networking = RCNetworker.shared) {
+    init(networker: Networking = CountriesNetworker.shared) {
         self.networker = networker
     }
     

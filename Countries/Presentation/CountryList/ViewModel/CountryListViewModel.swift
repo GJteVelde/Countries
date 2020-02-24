@@ -30,9 +30,9 @@ class CountryListViewModel: ObservableObject {
     
     private var cancellable = Set<AnyCancellable>()
     
-    private let repository: RCRepository
+    private let repository: CountriesRepository
     
-    init(repository: RCRepository = RCWebRepository()) {
+    init(repository: CountriesRepository = CountriesWebRepository()) {
         self.repository = repository
     }
     

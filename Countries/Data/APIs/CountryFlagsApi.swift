@@ -1,5 +1,5 @@
 //
-//  CFApi.swift
+//  CountryFlagsApi.swift
 //  Countries
 //
 //  Created by Gerrit Jan te Velde on 18.02.20.
@@ -10,6 +10,7 @@ import Foundation
 
 //Example CountryFlags: https://www.countryflags.io/be/shiny/64.png
 
+/// CountryFlagsAPI
 enum CFApi {
     
     case fetchFlag(id: String)

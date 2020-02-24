@@ -1,5 +1,5 @@
 //
-//  CFWebRepository.swift
+//  FlagsWebRepository.swift
 //  Countries
 //
 //  Created by Gerrit Jan te Velde on 18.02.20.
@@ -10,11 +10,11 @@ import Foundation
 import Combine
 import SwiftUI
 
-class CFWebRepository: CFRepository {
+class FlagsWebRepository: FlagsRepository {
     
-    private let networker: CFNetworker
+    private let networker: FlagsNetworker
     
-    init(networker: CFNetworker = CFNetworker.shared) {
+    init(networker: FlagsNetworker = FlagsNetworker.shared) {
         self.networker = networker
     }
     

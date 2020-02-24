@@ -1,5 +1,5 @@
 //
-//  RCApi.swift
+//  RestCountriesApi.swift
 //  Countries
 //
 //  Created by Gerrit Jan te Velde on 10.02.20.
@@ -10,6 +10,7 @@ import Foundation
 
 //Example RestCountries: https://restcountries.eu/rest/v2/all
 
+/// RestCountriesAPI
 enum RCApi {
     
     case fetchAll
