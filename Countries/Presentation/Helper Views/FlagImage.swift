@@ -42,7 +42,8 @@ struct FlagImage: View {
                 
                 Image(systemName: "arrowtriangle.right.fill")
                     .resizable()
-                    .frame(width: self.minSize(geometry.size) / 2, height: self.minSize(geometry.size) / 2)
+                    .scaledToFit()
+                    .frame(width: self.minSize(geometry.size) * 0.5, height: self.minSize(geometry.size) * 0.5)
                     .foregroundColor(.white)
                     .background(
                         Color.black

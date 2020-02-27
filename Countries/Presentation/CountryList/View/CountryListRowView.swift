@@ -44,19 +44,25 @@ struct CountryListRowView: View {
         VStack {
             viewModel.capital.map {     DetailRow(name: "Capital", content: $0) }
             viewModel.region.map {      DetailRow(name: "Region", content: $0) }
+            
+            if viewModel.detailsIsEmpty {
+                DetailRow(name: "No details available.", content: "")
+            }
         }
     }
 }
 
 private extension CountryListRowView {
     struct DetailRow: View {
-        var name: String
+        var name: String?
         var content: String
     
         var body: some View {
             HStack {
-                Text(name)
-                    .font(.footnote)
+                if name != nil {
+                    Text(name!)
+                        .font(.footnote)
+                }
                 
                 Spacer()
                 
@@ -68,23 +74,15 @@ private extension CountryListRowView {
     }
 }
 
-fileprivate extension AnyTransition {
-    static var moveAndFade: AnyTransition {
-        let insertion = AnyTransition.move(edge: .top).combined(with: .opacity)
-        let removal = AnyTransition.move(edge: .top).combined(with: .opacity)
-        return .asymmetric(insertion: insertion, removal: removal)
+struct CountryListRowView_Previews: PreviewProvider {
+    static var netherlandsVM = CountryListRowViewModel(country: Country.Netherlands, showDetails: true)
+    static var antarcticaVM = CountryListRowViewModel(country: Country.Antarctica, showDetails: true)
+
+    static var previews: some View {
+        Group {
+            CountryListRowView(viewModel: netherlandsVM)
+            
+            CountryListRowView(viewModel: antarcticaVM)
+        }
     }
 }
-
-//struct CountryListRowView_Previews: PreviewProvider {
-//    static var viewModel: CountryListRowViewModel = {
-//        let v = CountryListRowViewModel(country: Country.Netherlands)
-//        v.showDetails = true
-//        return v
-//    }()
-//
-//    static var previews: some View {
-//        CountryListRowView(viewModel: viewModel)
-//            .previewLayout(.fixed(width: 400, height: 100))
-//    }
-//}

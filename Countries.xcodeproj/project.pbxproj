@@ -18,6 +18,7 @@
 		5C92E2AB23FC7C8400844F26 /* FlagsWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E2AA23FC7C8400844F26 /* FlagsWebRepository.swift */; };
 		5C92E2AD23FF21D300844F26 /* FlagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E2AC23FF21D300844F26 /* FlagImage.swift */; };
 		5C92E2AF240086A500844F26 /* CountryFlagsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E2AE240086A500844F26 /* CountryFlagsUnitTests.swift */; };
+		5CA619D2240702870028A5EA /* AnyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA619D1240702870028A5EA /* AnyTransition.swift */; };
 		5CFE95BE23F00FCF00D398FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95BD23F00FCF00D398FF /* AppDelegate.swift */; };
 		5CFE95C023F00FCF00D398FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95BF23F00FCF00D398FF /* SceneDelegate.swift */; };
 		5CFE95C223F00FCF00D398FF /* CountryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE95C123F00FCF00D398FF /* CountryListView.swift */; };
@@ -60,6 +61,7 @@
 		5C92E2AA23FC7C8400844F26 /* FlagsWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsWebRepository.swift; sourceTree = "<group>"; };
 		5C92E2AC23FF21D300844F26 /* FlagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImage.swift; sourceTree = "<group>"; };
 		5C92E2AE240086A500844F26 /* CountryFlagsUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryFlagsUnitTests.swift; sourceTree = "<group>"; };
+		5CA619D1240702870028A5EA /* AnyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransition.swift; sourceTree = "<group>"; };
 		5CFE95BA23F00FCF00D398FF /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFE95BD23F00FCF00D398FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CFE95BF23F00FCF00D398FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 			path = Flags;
 			sourceTree = "<group>";
 		};
+		5CA619D0240702690028A5EA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5CA619D1240702870028A5EA /* AnyTransition.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5CF2A3C52404622D007F5D02 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +181,7 @@
 				5CFE95D123F0107100D398FF /* App */,
 				5CFE95D423F0119600D398FF /* Data */,
 				5CFE95D223F0108100D398FF /* Presentation */,
+				5CA619D0240702690028A5EA /* Extensions */,
 				5CFE95D323F010A000D398FF /* Supporting Files */,
 			);
 			path = Countries;
@@ -423,6 +434,7 @@
 				5C92E2A923FC7C4B00844F26 /* FlagsRepository.swift in Sources */,
 				5CFE95BE23F00FCF00D398FF /* AppDelegate.swift in Sources */,
 				5CFE95F023F202AA00D398FF /* CountriesNetworker.swift in Sources */,
+				5CA619D2240702870028A5EA /* AnyTransition.swift in Sources */,
 				5CFE95C023F00FCF00D398FF /* SceneDelegate.swift in Sources */,
 				5CFE95F623F34CC200D398FF /* CountriesWebRepository.swift in Sources */,
 				5CFE95EC23F1FFF400D398FF /* RestCountriesApi.swift in Sources */,

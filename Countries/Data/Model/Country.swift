@@ -35,5 +35,12 @@ extension Country {
                                      capital: "Amsterdam",
                                      region: "Europe",
                                      subregion: "Western Europe")
+    
+    static var Antarctica = Country(alpha3Code: "ANT",
+                                    alpha2Code: "AN",
+                                    name: "Antarctica",
+                                    capital: nil,
+                                    region: nil,
+                                    subregion: nil)
 }
 #endif

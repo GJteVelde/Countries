@@ -67,8 +67,10 @@ extension CountryListView {
             self.viewModel.hideDetailsForAllCountries()
         }, label: {
             Image(systemName: "arrowtriangle.right.fill")
+                .contentShape(Rectangle())
+                .frame(width: 40, height: 40)
                 .rotationEffect(.degrees(viewModel.showsDetails ? 90 : 0))
-                .scaleEffect(viewModel.showsDetails ? 1.5 : 1)
+                .scaleEffect(viewModel.showsDetails ? 1.8 : 1)
                 .animation(.easeInOut)
         }).disabled(!viewModel.showsDetails)
     }

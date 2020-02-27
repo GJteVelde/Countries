@@ -29,20 +29,34 @@ class CountryListRowViewModel: ObservableObject {
     }
     
     var name: String {
-        return country.name ?? "Unknown"
+        guard let name = country.name, !name.isEmpty else { return "Unknown" }
+        return name
     }
     
     var capital: String? {
-        return country.capital
+        guard let capital = country.capital, !capital.isEmpty else { return nil }
+        return capital
     }
     
     var region: String? {
         switch (country.region, country.subregion) {
-        case (.some(let region), let .some(subregion)):     return "\(region) (\(subregion))"
-        case (.some(let region), .none):                    return region
-        case (.none, .some(let subregion)):                 return "(\(subregion))"
-        case (.none, .none):                                return nil
+            
+        case (.some(let region), let .some(subregion)) where !region.isEmpty && !subregion.isEmpty:
+            return "\(region) (\(subregion))"
+            
+        case (.some(let region), .none) where !region.isEmpty:
+            return region
+            
+        case (.none, .some(let subregion)) where !subregion.isEmpty:
+            return "(\(subregion))"
+            
+        default:
+            return nil
         }
+    }
+    
+    var detailsIsEmpty: Bool {
+        return capital == nil && region == nil
     }
 }
 
