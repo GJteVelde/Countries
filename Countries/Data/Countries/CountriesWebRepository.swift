@@ -11,19 +11,17 @@ import Combine
 
 class CountriesWebRepository: CountriesRepository {
     
-    typealias T = Country
+    private let networker: CountriesNetworker
     
-    private let networker: Networking
-    
-    init(networker: Networking = CountriesNetworker.shared) {
+    init(networker: CountriesNetworker = CountriesNetworker.shared) {
         self.networker = networker
     }
     
-    func getAll() -> AnyPublisher<[T], Error> {
-        networker.fetch(api: RCApi.fetchAll)
+    func getAll() -> AnyPublisher<[Country], Error> {
+        networker.fetchAll()
     }
     
-    func get(id: String) -> AnyPublisher<T, Error> {
-        networker.fetch(api: RCApi.fetch(id: id))
+    func get(id: String) -> AnyPublisher<Country, Error> {
+        networker.fetch(id: id)
     }
 }

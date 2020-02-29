@@ -10,11 +10,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-enum APIError: Error {
-    case network(description: String)
-    case unknown
-}
-
 class CountryListViewModel: ObservableObject {
     
     @Published var state = StateMachine.State.start
