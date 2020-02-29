@@ -22,25 +22,14 @@ class FlagsNetworker: Networking {
     
     func fetchFlag(id: String) -> AnyPublisher<Image, Error> {
         let api = CFApi.fetchFlag(id: id)
-        return self.fetch(api: api)
-    }
-}
-
-extension FlagsNetworker {
-    
-    private func fetch(api: CFApi) -> AnyPublisher<Image, Error> {
-        guard let urlRequest = createUrlRequest(from: api) else {
-            fatalError()
-        }
         
-        return session.dataTaskPublisher(for: urlRequest)
-            .tryMap { (output) in
-                guard let uiImage = UIImage(data: output.data) else {
+        return self.fetch(api: api)
+            .tryMap { (data) in
+                guard let uiImage = UIImage(data: data) else {
                     fatalError()
                 }
                 return Image(uiImage: uiImage)
             }
             .eraseToAnyPublisher()
     }
-    
 }

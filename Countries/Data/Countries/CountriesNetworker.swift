@@ -21,11 +21,17 @@ class CountriesNetworker: Networking {
     
     func fetchAll() -> AnyPublisher<[Country], Error> {
         let api = RCApi.fetchAll
+        
         return self.fetch(api: api)
+            .decode(type: [Country].self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
     }
     
     func fetch(id: String) -> AnyPublisher<Country, Error> {
         let api = RCApi.fetch(id: id)
+        
         return self.fetch(api: api)
+            .decode(type: Country.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
     }
 }

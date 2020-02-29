@@ -17,7 +17,7 @@ protocol Networking {
 
 extension Networking {
     
-    func fetch<T: Decodable>(api: API) -> AnyPublisher<T, Error> {
+    func fetch(api: API) -> AnyPublisher<Data, Error> {
         guard let urlRequest = createUrlRequest(from: api) else {
             fatalError()
         }
@@ -27,7 +27,6 @@ extension Networking {
                 print(output.data)
                 return output.data
             }
-            .decode(type: T.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
     
