@@ -18,16 +18,9 @@ struct CountryListView: View {
     
     var body: some View {
         NavigationView {
-            Group {
-                if viewModel.isLoading {
-                    loadingView
-                } else if viewModel.countries.isEmpty {
-                    emptyListView
-                } else {
-                    listView
-                }
-            }
-        
+            
+            content
+                
             .navigationBarTitle("Countries")
             .navigationBarItems(trailing: collapseButton)
         }.onAppear {
@@ -38,8 +31,20 @@ struct CountryListView: View {
 
 extension CountryListView {
     
-    private var loadingView: some View {
-        LoadingView(message: "Countries are being loaded...")
+    private var content: some View {
+        switch viewModel.state {
+        case .start:
+            return AnyView(Text("Hey, what's up?"))
+            
+        case .loading:
+            return AnyView(LoadingView(message: "Countries are being loaded..."))
+            
+        case .results:
+            return viewModel.countries.isEmpty ? AnyView(emptyListView) : AnyView(listView)
+            
+        case .error(let error):
+            return AnyView(ErrorView(message: "Problem loading countries.", error: error))
+        }
     }
     
     private var emptyListView: some View {
@@ -54,7 +59,6 @@ extension CountryListView {
                     .modifier(ListRowModifier())
                     .animation(.easeInOut)
                     .onTapGesture {
-                        print("country with id \(vm.id) tapped")
                         self.viewModel.selectDeselect(vm.id)
                     }
             }.padding()

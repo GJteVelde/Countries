@@ -17,7 +17,7 @@ enum APIError: Error {
 
 class CountryListViewModel: ObservableObject {
     
-    @Published var isLoading = false
+    @Published var state = StateMachine.State.start
     
     @Published var countries = [CountryListRowViewModel]()
     
@@ -43,7 +43,6 @@ class CountryListViewModel: ObservableObject {
 extension CountryListViewModel {
 
     func selectDeselect(_ id: String) {
-        print("\(#function) called")
         countries.first(where: { $0.id == id })?.showDetails.toggle()
         showsDetails = countries.filter({ $0.showDetails == true }).count > 0
     }
@@ -54,19 +53,20 @@ extension CountryListViewModel {
     }
     
     func fetchAll() {
-        isLoading = true
+        state = .loading
         
         self.repository.getAll()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { (completion) in
                 switch completion {
                 case .finished:
-                    self.isLoading = false
+                    break
                 case .failure(let error):
-                    print("Error: \(error.localizedDescription)")
+                    self.state = .error(error)
                 }
             }) { (countries) in
                 self.rcCountries = countries
+                self.state = .results
             }
             .store(in: &self.cancellable)
     }
