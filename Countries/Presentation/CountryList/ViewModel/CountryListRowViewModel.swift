@@ -18,11 +18,11 @@ class CountryListRowViewModel: ObservableObject {
     
     private var country: Country
     
-    private let repository: FlagsRepository
+    private let repository: FlagRepository<FlagRemoteStore>
     
     private var cancellable = Set<AnyCancellable>()
     
-    init(country: Country, showDetails: Bool, repository: FlagsRepository = FlagsWebRepository()) {
+    init(country: Country, showDetails: Bool, repository: FlagRepository<FlagRemoteStore> = FlagRepository(remoteStore: FlagRemoteStore(networking: Networker()))) {
         self.country = country
         self.showDetails = showDetails
         self.repository = repository
@@ -65,7 +65,7 @@ extension CountryListRowViewModel {
     func fetchFlag() {
         guard let alpha2Code = country.alpha2Code else { return }
         
-        repository.get(id: alpha2Code)
+        repository.getById(alpha2Code)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { (completion) in
                 switch completion {
@@ -75,6 +75,7 @@ extension CountryListRowViewModel {
                     print("❌ \(error.localizedDescription)")
                 }
             }) { (image) in
+                print("Loaded flag for \(alpha2Code)")
                 self.flag = image
             }
             .store(in: &cancellable)

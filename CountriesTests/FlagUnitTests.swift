@@ -1,5 +1,5 @@
 //
-//  CountryFlagsUnitTests.swift
+//  FlagUnitTests.swift
 //  CountriesTests
 //
 //  Created by Gerrit Jan te Velde on 21.02.20.
@@ -9,22 +9,25 @@
 import XCTest
 @testable import Countries
 
-class CountryFlagsUnitTests: XCTestCase {
+class FlagUnitTests: XCTestCase {
 
-    var networker: FlagsNetworker!
+    var networker: Networker!
     
     override func setUp() {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [URLProtocolMock.self]
         let session = URLSession(configuration: config)
-        networker = FlagsNetworker(session: session)
+        networker = Networker(session: session)
     }
 
     override func tearDown() {
         networker = nil
     }
+}
 
-    func test_CFApi_fetchFlag_nl() {
+extension FlagUnitTests {
+    
+    func test_CFApi_fetchFlag_returnNl() {
         let id = "nl"
         let api = CFApi.fetchFlag(id: id)
         
@@ -37,7 +40,7 @@ class CountryFlagsUnitTests: XCTestCase {
         XCTAssertNotEqual(request?.url?.path, "/de/shiny/64.png")
     }
 
-    func test_CFApi_fetchFlag_de() {
+    func test_CFApi_fetchFlag_returnDe() {
         let id = "de"
         let api = CFApi.fetchFlag(id: id)
         

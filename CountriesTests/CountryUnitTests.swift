@@ -1,5 +1,5 @@
 //
-//  RestCountriesUnitTests.swift
+//  CountryUnitTests.swift
 //  CountriesTests
 //
 //  Created by Gerrit Jan te Velde on 16.02.20.
@@ -9,20 +9,25 @@
 import XCTest
 @testable import Countries
 
-class RestCountriesUnitTests: XCTestCase {
+class CountryUnitTests: XCTestCase {
 
-    var networker: CountriesNetworker!
+    var networker: Networker!
+    var countryRemoteStore: CountryRemoteStore!
     
     override func setUp() {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [URLProtocolMock.self]
         let session = URLSession(configuration: config)
-        networker = CountriesNetworker(session: session)
+        networker = Networker(session: session)
+        countryRemoteStore = CountryRemoteStore(networking: networker)
     }
 
     override func tearDown() {
         networker = nil
+        countryRemoteStore = nil
     }
+    
+    //MARK: - RestCountries API Tests
     
     func test_RCAPI_fetchAll() {
         let api = RCApi.fetchAll
@@ -44,7 +49,9 @@ class RestCountriesUnitTests: XCTestCase {
         XCTAssertEqual(request?.url?.path, "/rest/v2/alpha/AFG")
     }
     
-    func test_RCNetworker_getAll() {
+    //MARK: - CountryRemoteStore Tests
+    
+    func test_countryRemoteStore_getAll() {
         guard let request = networker.createUrlRequest(from: RCApi.fetchAll) else {
             fatalError("❌ Failure creating creating request.")
         }
@@ -57,7 +64,7 @@ class RestCountriesUnitTests: XCTestCase {
         
         let expectation = XCTestExpectation()
         
-        let cancellable = networker.fetchAll()
+        let cancellable = countryRemoteStore.getAll()
             .sink(receiveCompletion: { (completion) in
                 switch completion {
                 case .failure(let error):
@@ -82,42 +89,6 @@ class RestCountriesUnitTests: XCTestCase {
                 
                 expectation.fulfill()
             }
-        
-        XCTAssertNotNil(cancellable)
-        wait(for: [expectation], timeout: 2.0)
-    }
-    
-    func test_RCNetworker_getById_afg() {
-        let api = RCApi.fetch(id: "AFG")
-        guard let request = networker.createUrlRequest(from: api) else {
-            fatalError("❌ Failure creating creating request.")
-        }
-        
-        do {
-            try NetworkingHelper().prepareTest(request: request, fileName: "oneCountry")
-        } catch {
-            fatalError("❌ Error preparing test: \(error.localizedDescription).")
-        }
-        
-        let expectation = XCTestExpectation()
-        
-        let cancellable = networker.fetch(id: "AFG")
-            .sink(receiveCompletion: { (completion) in
-                switch completion {
-                case .failure(let error):
-                    XCTFail(error.localizedDescription)
-                case .finished:
-                    break
-                }
-            }) { (country) in
-                XCTAssertEqual(country.alpha3Code, "AFG")
-                XCTAssertEqual(country.name, "Afghanistan")
-                
-                XCTAssertNotEqual(country.alpha3Code, "NL")
-                XCTAssertNotEqual(country.name, "Netherlands")
-                
-                expectation.fulfill()
-        }
         
         XCTAssertNotNil(cancellable)
         wait(for: [expectation], timeout: 2.0)
