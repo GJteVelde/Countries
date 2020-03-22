@@ -18,6 +18,7 @@ protocol Networking {
 extension Networking {
     
     func fetch(api: API) -> AnyPublisher<Data, Error> {
+            
         guard let urlRequest = createUrlRequest(from: api) else {
             fatalError()
         }

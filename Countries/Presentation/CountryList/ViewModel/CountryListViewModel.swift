@@ -28,9 +28,9 @@ class CountryListViewModel: ObservableObject {
     
     private var cancellable = Set<AnyCancellable>()
     
-    private let repository: CountriesRepository
+    private let repository: CountryRepository<CountryRemoteStore, CountryLocalStore>
     
-    init(repository: CountriesRepository = CountriesWebRepository()) {
+    init(repository: CountryRepository<CountryRemoteStore, CountryLocalStore> = CountryRepository(remoteStore: CountryRemoteStore(networking: Networker()), localStore: CountryLocalStore())) {
         self.repository = repository
     }
 }

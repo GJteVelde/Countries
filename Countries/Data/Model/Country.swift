@@ -26,6 +26,27 @@ extension Country: Identifiable {
     }
 }
 
+extension Country: Entity {
+    
+    private var country_Realm: Country_Realm {
+        let c = Country_Realm()
+        
+        c.alpha3Code        = alpha3Code
+        c.alpha2Code        = alpha2Code
+        c.name              = name
+        c.capital           = capital
+        c.region            = region
+        c.subregion         = subregion
+        
+        return c
+    }
+    
+    func toStorable() -> Country_Realm {
+        return country_Realm
+    }
+    
+}
+
 #if DEBUG
 extension Country {
     
